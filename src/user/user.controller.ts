@@ -9,17 +9,15 @@ export class UserController {
 
     }
 
-    @Post('login')
-    login(@Body() user: UserDto) {
-        this.userService.login(user);
-        return { user: 1, name: 'test' };
-    }
+    // @Post('login')
+    // login(@Body() user: UserDto) {
+    //     this.userService.login(user);
+    //     return { user: 1, name: 'test' };
+    // }
 
     @Post('register')
     register(@Body() user: UserDto) {
-        this.userService.register(user)
-        console.log(user);
-        return 'success';
+        return this.userService.register(user);
     }
 
     @Get('users')
